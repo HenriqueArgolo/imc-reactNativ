@@ -5,13 +5,13 @@ import { StyleSheet } from "react-native";
         viewMain:{
             display: "flex",
             alignItems: "center",
-            height: '100%'
+            height: '100%',
         },
         mainMain:{
             borderTopLeftRadius: 40,
             borderTopRightRadius: 40,
             backgroundColor: 'white',
-            height: '100%'
+            height: '100%',
         },
         
         input:{
@@ -23,13 +23,13 @@ import { StyleSheet } from "react-native";
             marginTop: 5,
             backgroundColor:'#e4e4e4',
             padding: 5,
-            textAlign: 'center'
+            textAlign: 'left'
         },
     
         text:{
             color: 'gray',
             fontSize: 15,
-            textAlign: "center",
+            textAlign: 'left',
             marginTop: 15
         },
 
@@ -39,8 +39,7 @@ import { StyleSheet } from "react-native";
             backgroundColor: '#74819d',
             width: 280,
             height: 50,
-            borderRadius: 10,
-            marginBottom: 20,
+            borderRadius: 10, 
             marginTop: 10
             
             
@@ -51,6 +50,13 @@ import { StyleSheet } from "react-native";
             color: 'white',
             fontSize: 16,
         
+        },
+
+        errorMessage:{
+            fontSize: 12,
+            color: 'red',
+            
+
         },
        
     
