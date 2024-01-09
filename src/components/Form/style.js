@@ -67,6 +67,23 @@ import { StyleSheet } from "react-native";
             alignItems: "center"
         },
        
+
+       textHistorico:{
+        marginTop: 10
+       },
+
+       textPai:{
+        display: "flex",
+        alignItems: "flex-star",
+        flexDirection: 'column',
+        marginBottom: 5,
+        marginTop: 5,
+        width: 120,
+        backgroundColor:'#e4e4e4',
+        borderRadius: 10,
+        padding: 5
+
+       },
     
     });
 

@@ -17,7 +17,7 @@ export default function Form(){
     function imcCaculator(){
         let valueHeight = height.replace(",",".")
         let totalImc = ((weight/(valueHeight*valueHeight)).toFixed(2))
-        setImcList((arr) => [...arr,{id: new Date().getTime(), imc: totalImc} ])
+        setImcList((arr) => [...arr,{id: new Date().getTime(), heig: valueHeight, weig: weight, imc: totalImc} ])
         setImc(totalImc)
 
     }
@@ -93,16 +93,20 @@ export default function Form(){
              >
             <Text style = {styles.textButton}>{textButton}</Text>
             </TouchableOpacity>
+            <Text style={styles.textHistorico}>Histórico de IMC</Text>
             <FlatList
             indicatorStyle={styles.listImc}
             data={imcList.reverse()}
             renderItem={({item}) => {
+                
                 return(
-                    <Text>
-                        Historico:
-                        <Text>{item.imc}</Text>
-                        
-                    </Text>
+                    <View style={styles.historico}>
+                        <View style={styles.textPai}>
+                        <Text> Altura: {item.heig}</Text>
+                        <Text> Peso: {item.weig}</Text>
+                        <Text> IMC: {item.imc}</Text></View>                       
+                    </View>
+                               
                 ) 
             }}
            >
