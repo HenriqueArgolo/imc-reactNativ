@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TextInput,replace, View, Text, Keyboard, TouchableOpacity, Vibration, Pressable} from "react-native";
+import { TextInput,replace, View, Text, Keyboard, TouchableOpacity, Vibration, Pressable, FlatList} from "react-native";
 import styles from "../Form/style.js"
 import ResultImc from "./ResultIMC/"
 
@@ -11,11 +11,15 @@ export default function Form(){
     const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("calcular")
     const [errorMessage, setErrorMessage] = useState(null)
+    const [imcList, setImcList] = useState([])
    
    
     function imcCaculator(){
         let valueHeight = height.replace(",",".")
-        return setImc((weight/(valueHeight*valueHeight)).toFixed(2))
+        let totalImc = ((weight/(valueHeight*valueHeight)).toFixed(2))
+        setImcList((arr) => [...arr,{id: new Date().getTime(), imc: totalImc} ])
+        setImc(totalImc)
+
     }
     function verification(){
         if (weight ||  height == null){
@@ -84,17 +88,31 @@ export default function Form(){
             <ResultImc messageResultImc={messageImc} resultImc={imc}/>
             
             <TouchableOpacity
-            
             style={styles.button}
             onPress={() => {validationImc()}}
              >
-    
             <Text style = {styles.textButton}>{textButton}</Text>
             </TouchableOpacity>
+            <FlatList
+            indicatorStyle={styles.listImc}
+            data={imcList.reverse()}
+            renderItem={({item}) => {
+                return(
+                    <Text>
+                        Historico:
+                        <Text>{item.imc}</Text>
+                        
+                    </Text>
+                ) 
+            }}
+           >
+
+            </FlatList>
             </View>
+ 
             }
             
-        </Pressable>  
+        </Pressable>   
     )
 }
 

@@ -62,6 +62,10 @@ import { StyleSheet } from "react-native";
             display: "flex",
             alignItems: "center",
         },
+        listImc:{
+            display: "flex",
+            alignItems: "center"
+        },
        
     
     });
