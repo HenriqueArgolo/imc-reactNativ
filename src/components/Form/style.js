@@ -58,6 +58,10 @@ import { StyleSheet } from "react-native";
             
 
         },
+        else:{
+            display: "flex",
+            alignItems: "center",
+        },
        
     
     });

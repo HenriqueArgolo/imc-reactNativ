@@ -3,33 +3,29 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     text:{
-        fontSize: 18,
+        fontSize: 25,
         color: '#74819d',
         width: '100%',
         textAlign: "center"
     },
 
-    mainMessage:{
+    mainView:{
         display:"flex",
         alignItems: "center",
+        justifyContent: "center",
         marginTop: 60,
         height: 100,
-        width: 200,
+        width: "100%",
+        marginBottom: 50,
+        flexDirection: "column-reverse"
         
         
     },
 
     result:{
-        fontSize: 30,
-        color: '#74819d'
-    },
-
-    viewShare:{  
-        display: "flex",
-        alignItems: "center",
-        width: '100%',
-        marginBottom: 5,
-
+        fontSize: 40,
+        color: '#74819d',
+        marginBottom: 10
     },
 
     shareButton:{

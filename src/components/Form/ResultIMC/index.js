@@ -10,8 +10,7 @@ export default function ResultImc(props){
     }
 
     return(
-        <View style={styles.mainMessage}>
-            <View style={styles.viewShare}>
+        <View style={styles.mainView}>  
                 {props.resultImc != null ?
                     <TouchableOpacity
                     onPress={()=> {onShare()}}
@@ -21,10 +20,8 @@ export default function ResultImc(props){
                 :  
                 <View/>
             }
-
-            </View>
-            <Text style={styles.text}>{props.messageResultImc}</Text>
             <Text style={styles.result}>{props.resultImc}</Text>
+            <Text style={styles.text}>{props.messageResultImc}</Text>          
         </View>
     );
 }
